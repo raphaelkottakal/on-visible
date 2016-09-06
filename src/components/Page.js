@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import 'normalize.css/normalize.css';
 import '../css/main.css';
+import '../css/animate.css';
 
 import Ga from '../functions/Ga';
 
@@ -21,7 +22,7 @@ export default class Page extends React.Component {
 				<p>Nulla nec odio quis quam volutpat laoreet et sit amet massa. Mauris cursus viverra lacinia. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sapien elit, tempor et vulputate sit amet, sollicitudin in dolor. Fusce tortor erat, blandit sit amet ante a, semper blandit ante. Suspendisse dui nulla, rhoncus sed sapien ut, sagittis lobortis nisl. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In malesuada ornare risus vitae laoreet. Nam malesuada feugiat odio vitae vehicula. Integer ac diam non tortor auctor lobortis bibendum consectetur enim. Quisque tristique, enim sit amet pretium aliquet, orci arcu ornare nunc, consectetur maximus turpis nunc eget arcu.</p>
 
 				<p>Sed elit magna, vulputate ut iaculis vel, elementum vel nisi. Fusce nec ante vel diam posuere auctor. Aliquam sodales iaculis nunc, vel lacinia massa. Nunc id sapien a erat ornare aliquet. Fusce quis semper est. In sed ligula ut diam fringilla tempor ut sit amet ipsum. Pellentesque at ex ut lacus euismod placerat quis a libero. In sem tortor, rutrum eu vulputate vitae, bibendum at libero.</p>
-				<OnVisible>
+				<OnVisible animation="rollIn">
 					<img src="http://placehold.it/400x400/c0392b/ffffff/&text=image" alt="sample" />
 				</OnVisible>
 

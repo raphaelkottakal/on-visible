@@ -33,14 +33,21 @@ export default class OnVisible extends React.Component {
 			if (windowOffset >= endOffset ) {
 				this.setState({ revealed: true });
 				console.log('offset reached');
+				this.refs.topElem.className += ' animated ' + this.props.animation
 			}
 			console.log('Scrolled');
 		}
 	}
 
+	getTopElemStyles() {
+		return {
+			opacity: (this.state.revealed)? 1 : 0
+		}
+	}
+
 	render() {
 		return(
-			<div ref="topElem">
+			<div style={this.getTopElemStyles()} ref="topElem">
 				{this.props.children}
 			</div>			
 		);
