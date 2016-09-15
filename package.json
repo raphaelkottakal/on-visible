@@ -17,9 +17,10 @@
     "url": "https://github.com/raphaelkottakal/on-visible/issues"
   },
   "dependencies": {
-    "react-dom": "~15.1.0",
+    "gsap": "^1.19.0",
+    "normalize.css": "~4.1.1",
     "react": "~15.1.0",
-    "normalize.css": "~4.1.1"
+    "react-dom": "~15.1.0"
   },
   "devDependencies": {
     "babel-loader": "~6.2.4",

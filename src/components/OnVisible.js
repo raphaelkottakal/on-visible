@@ -1,4 +1,5 @@
 import React from 'react';
+import { TweenLite } from 'gsap';
 
 export default class OnVisible extends React.Component {
 
@@ -20,23 +21,29 @@ export default class OnVisible extends React.Component {
 	}
 
 	handelScroll() {
-		if (!this.state.revealed) {
+		
+			const windowTopOffset = window.pageYOffset;
 			const windowOffset = window.pageYOffset + window.innerHeight;
-			const top = this.refs.topElem.offsetTop;
+			const topOffset = this.refs.topElem.offsetTop;
 			const height = this.refs.topElem.offsetHeight;
-			const endOffset = top + height;
+			const endOffset = topOffset + height;
 			// console.log('window offset', windowOffset);
 			// console.log('window height', window.innerHeight);
 			// console.log('end offset', this.endOffset);
 			// console.log('top', this.top);
 			// console.log('height', this.height);
-			if (windowOffset >= endOffset ) {
-				this.setState({ revealed: true });
-				console.log('offset reached');
-				this.refs.topElem.className += ' animated ' + this.props.animation
+			if (windowOffset >= endOffset && windowTopOffset <= topOffset) {
+				if (!this.state.revealed) {
+					this.setState({ revealed: true });
+					// console.log('offset reached');
+					TweenLite.from(this.refs.topElem, 1, this.props.animation);
+				}
+				// this.refs.topElem.className += ' animated ' + this.props.animation
+			} else if(windowTopOffset >= endOffset || windowOffset <= topOffset) {
+				this.setState({ revealed: false });
+				// console.log('out of screen');
 			}
-			console.log('Scrolled');
-		}
+			// console.log('Scrolled');
 	}
 
 	getTopElemStyles() {
